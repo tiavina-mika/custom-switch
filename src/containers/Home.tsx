@@ -1,7 +1,7 @@
 /** @jsxRuntime classic /
 /* @jsx jsx */
 /** @jsxImportSource @emotion/react */
-import { jsx } from "@emotion/react";
+import { jsx, Theme } from "@emotion/react";
 import { Box, FormControlLabel, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -72,15 +72,21 @@ const fields: ISelectOption[] = [
 ];
 
 const classes = {
-  formControll: {
+  formControl: (theme: Theme) => ({
     "&.MuiFormControlLabel-root": {
       marginLeft: 0,
       marginRight: 0
     },
     "& .MuiSwitch-root ": {
       order: 2
+    },
+    "& .MuiFormControlLabel-label": {
+      color: theme.palette.grey[800],
+      fontSize: 14,
+      lineHeight: 1,
+      fontWeight: 400
     }
-  }
+  })
 };
 const Home = () => {
   const [options, setOptions] = useState<ISwitchOption[]>(
@@ -115,11 +121,11 @@ const Home = () => {
             <FormControlLabel
               key={field.value + index}
               control={<Switch />}
-              css={classes.formControll}
+              css={classes.formControl}
               onChange={() => handleCheck(field.value)}
               value={field.checked}
               className="flexRow spaceBetween"
-              label={<Typography variant="h6">{field.label}</Typography>}
+              label={field.label}
             />
           ))}
         </Stack>
