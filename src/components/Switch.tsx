@@ -6,15 +6,15 @@ import { Switch as MUISwitch, SwitchProps } from "@mui/material";
 
 const classes = {
   switch: (theme: Theme) => ({
-    width: 42,
-    height: 26,
+    width: 32,
+    height: 16,
     padding: 0,
     "& .MuiSwitch-switchBase": {
       padding: 0,
-      margin: 2,
+      margin: 1.5,
       transitionDuration: "300ms",
       "&.Mui-checked": {
-        transform: "translateX(16px)",
+        transform: "translateX(10px)",
         color: "#fff",
         "& + .MuiSwitch-track": {
           backgroundColor:
@@ -27,8 +27,8 @@ const classes = {
         }
       },
       "&.Mui-focusVisible .MuiSwitch-thumb": {
-        color: "#33cf4d",
-        border: "6px solid #fff"
+        color: "#33cf4d"
+        // border: '6px solid #fff',
       },
       "&.Mui-disabled .MuiSwitch-thumb": {
         color:
@@ -42,13 +42,15 @@ const classes = {
     },
     "& .MuiSwitch-thumb": {
       // boxSizing: 'border-box',
-      width: 22,
-      height: 22
+      backgroundColor: theme.palette.grey[300],
+      width: 13.5,
+      height: 13.5
     },
     "& .MuiSwitch-track": {
-      borderRadius: 26 / 2,
-      backgroundColor: theme.palette.mode === "light" ? "#E9E9EA" : "#39393D",
+      borderRadius: 16 / 2,
+      backgroundColor: theme.palette.mode === "light" ? "#fff" : "#39393D",
       opacity: 1,
+      border: "1px solid " + theme.palette.grey[300],
       transition: theme.transitions.create(["background-color"], {
         duration: 500
       })

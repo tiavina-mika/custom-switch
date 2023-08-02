@@ -69,7 +69,7 @@ const fields: ISelectOption[] = [
 const classes = {
   formControll: {
     "&.MuiFormControlLabel-root": {
-      // backgroundColor: 'red'
+      // backgroundColor: 'red',
     }
   }
 };
@@ -77,7 +77,7 @@ const Home = () => {
   return (
     <div className="flexCenter" css={{ padding: 20 }}>
       <div className="flexCenter" css={{ width: 290 }}>
-        <Stack spacing={1}>
+        <Stack spacing={1.6}>
           {fields.map((field: ISelectOption, index: number) => (
             <FormControlLabel
               key={field.value + index}
