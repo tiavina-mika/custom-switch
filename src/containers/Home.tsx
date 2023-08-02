@@ -2,45 +2,94 @@
 /* @jsx jsx */
 /** @jsxImportSource @emotion/react */
 import { jsx } from "@emotion/react";
-import { useState } from "react";
+import { Box, FormControlLabel, Stack, Typography } from "@mui/material";
 
-import {
-  IProjectProduct,
-  IProjectProductOption,
-  ISelectOption
-} from "../types/app.type";
-import ButtonSwitch from "../components/ButtonSwitch";
-import { Box } from "@mui/material";
+import Switch from "../components/Switch";
+import { ISelectOption } from "../types/app.type";
 
-const options: IProjectProductOption[] = [
+const fields: ISelectOption[] = [
   {
-    label: "Roadmap",
-    value: "roadmap"
+    value: "none",
+    label: "Aucune"
   },
   {
-    label: "Insight",
-    value: "insight"
+    value: "okr",
+    label: "Objectif"
+  },
+  {
+    value: "driver",
+    label: "Drivers & Impact"
+  },
+  {
+    value: "owner",
+    label: "Owner"
+  },
+  {
+    value: "leader",
+    label: "Leader"
+  },
+  {
+    value: "team",
+    label: "Equipe"
+  },
+  {
+    value: "role",
+    label: "Rôle"
+  },
+  {
+    value: "user",
+    label: "User"
+  },
+  {
+    value: "product",
+    label: "Produit"
+  },
+  {
+    value: "problematic",
+    label: "Problématique"
+  },
+  {
+    value: "feature",
+    label: "Feature"
+  },
+  {
+    value: "type",
+    label: "Deadline"
+  },
+  {
+    value: "dependentSubject",
+    label: "Sujet avec dépendance"
+  },
+  {
+    value: "confiance",
+    label: "Confiance"
   }
 ];
 
+const classes = {
+  formControll: {
+    "&.MuiFormControlLabel-root": {
+      // backgroundColor: 'red'
+    }
+  }
+};
 const Home = () => {
-  const [selectedProductOption, setSelectedProductOption] = useState<
-    IProjectProductOption
-  >(options[0]);
-
-  const handleSelectProjectProduct = (value: IProjectProductOption) => {
-    setSelectedProductOption(value);
-  };
-
   return (
-    <Box className="flexCenter" sx={{ minHeight: "100vh" }}>
-      <ButtonSwitch
-        onSelect={handleSelectProjectProduct}
-        selectedOption={selectedProductOption}
-        options={options}
-        checked={selectedProductOption.value === "roadmap"}
-      />
-    </Box>
+    <div className="flexCenter" css={{ padding: 20 }}>
+      <div className="flexCenter" css={{ width: 290 }}>
+        <Stack spacing={1}>
+          {fields.map((field: ISelectOption, index: number) => (
+            <FormControlLabel
+              key={field.value + index}
+              control={<Switch />}
+              css={classes.formControll}
+              className="flexRow spaceBetween"
+              label={<Typography variant="h6">{field.value}</Typography>}
+            />
+          ))}
+        </Stack>
+      </div>
+    </div>
   );
 };
 
