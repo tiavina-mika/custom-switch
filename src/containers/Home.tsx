@@ -96,7 +96,7 @@ const Home = () => {
   );
 
   const handleCheck = (value: string) => {
-    setOptions((prev: ISwitchOption[]) => {
+    setOptions((prev: ISwitchOption[]): ISwitchOption[] => {
       const newFields = prev.map(
         (field: ISwitchOption): ISwitchOption => {
           if (value === field.value) {
