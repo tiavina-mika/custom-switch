@@ -2,7 +2,7 @@
 /* @jsx jsx */
 /** @jsxImportSource @emotion/react */
 import { jsx, Theme } from "@emotion/react";
-import { Box, FormControlLabel, Stack, Typography } from "@mui/material";
+import { FormControlLabel, Stack } from "@mui/material";
 import { useState } from "react";
 
 import Switch from "../components/Switch";
