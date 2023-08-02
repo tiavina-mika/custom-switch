@@ -69,7 +69,11 @@ const fields: ISelectOption[] = [
 const classes = {
   formControll: {
     "&.MuiFormControlLabel-root": {
-      // backgroundColor: 'red',
+      marginLeft: 0,
+      marginRight: 0
+    },
+    "& .MuiSwitch-root ": {
+      order: 2
     }
   }
 };
@@ -77,16 +81,15 @@ const Home = () => {
   return (
     <div className="flexCenter" css={{ padding: 20 }}>
       <div className="flexCenter" css={{ width: 290 }}>
-        <Stack spacing={1.6}>
+        <Stack spacing={1.6} className="stretchSelf">
           {fields.map((field: ISelectOption, index: number) => (
-            // <FormControlLabel
-            //   key={field.value + index}
-            //   control={<Switch />}
-            //   css={classes.formControll}
-            //   className="flexRow spaceBetween"
-            //   label={<Typography variant="h6">{field.value}</Typography>}
-            // />
-            <Switch key={field.value + index} />
+            <FormControlLabel
+              key={field.value + index}
+              control={<Switch />}
+              css={classes.formControll}
+              className="flexRow spaceBetween"
+              label={<Typography variant="h6">{field.label}</Typography>}
+            />
           ))}
         </Stack>
       </div>
