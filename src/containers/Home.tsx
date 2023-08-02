@@ -88,6 +88,7 @@ const classes = {
     }
   })
 };
+
 const Home = () => {
   const [options, setOptions] = useState<ISwitchOption[]>(
     fields.map(
