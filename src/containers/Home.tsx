@@ -79,13 +79,14 @@ const Home = () => {
       <div className="flexCenter" css={{ width: 290 }}>
         <Stack spacing={1.6}>
           {fields.map((field: ISelectOption, index: number) => (
-            <FormControlLabel
-              key={field.value + index}
-              control={<Switch />}
-              css={classes.formControll}
-              className="flexRow spaceBetween"
-              label={<Typography variant="h6">{field.value}</Typography>}
-            />
+            // <FormControlLabel
+            //   key={field.value + index}
+            //   control={<Switch />}
+            //   css={classes.formControll}
+            //   className="flexRow spaceBetween"
+            //   label={<Typography variant="h6">{field.value}</Typography>}
+            // />
+            <Switch key={field.value + index} />
           ))}
         </Stack>
       </div>

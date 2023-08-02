@@ -7,20 +7,22 @@ import { Switch as MUISwitch, SwitchProps } from "@mui/material";
 const classes = {
   switch: (theme: Theme) => ({
     width: 32,
-    height: 16,
+    height: 18,
     padding: 0,
     "& .MuiSwitch-switchBase": {
       padding: 0,
       margin: 1.5,
       transitionDuration: "300ms",
       "&.Mui-checked": {
-        transform: "translateX(10px)",
+        transform: `translateX(${32 - 13.5 - 1.5 * 2}px)`,
         color: "#fff",
         "& + .MuiSwitch-track": {
-          backgroundColor:
-            theme.palette.mode === "dark" ? "#2ECA45" : "#65C466",
+          backgroundColor: theme.palette.primary.dark,
           opacity: 1,
           border: 0
+        },
+        "& .MuiSwitch-thumb": {
+          backgroundColor: "#fff"
         },
         "&.Mui-disabled + .MuiSwitch-track": {
           opacity: 0.5
@@ -47,13 +49,14 @@ const classes = {
       height: 13.5
     },
     "& .MuiSwitch-track": {
-      borderRadius: 16 / 2,
+      borderRadius: 18 / 2,
       backgroundColor: theme.palette.mode === "light" ? "#fff" : "#39393D",
       opacity: 1,
       border: "1px solid " + theme.palette.grey[300],
       transition: theme.transitions.create(["background-color"], {
         duration: 500
-      })
+      }),
+      boxSizing: "border-box"
     }
   })
 };
