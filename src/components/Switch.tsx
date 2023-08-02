@@ -54,7 +54,7 @@ const classes = {
       transition: theme.transitions.create(["background-color"], {
         duration: 500
       }),
-      boxSizing: "border-box"
+      boxSizing: "border-box" as const
     }
   })
 };
