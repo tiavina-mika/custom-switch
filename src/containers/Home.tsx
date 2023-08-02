@@ -111,7 +111,7 @@ const Home = () => {
     <div className="flexCenter" css={{ padding: 20 }}>
       <div className="flexCenter" css={{ width: 290 }}>
         <Stack spacing={1.6} className="stretchSelf">
-          {options.map((field: ISelectOption, index: number) => (
+          {options.map((field: ISwitchOption, index: number) => (
             <FormControlLabel
               key={field.value + index}
               control={<Switch />}
