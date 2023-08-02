@@ -8,9 +8,9 @@ import { useState } from "react";
 import Switch from "../components/Switch";
 import { ISelectOption } from "../types/app.type";
 
-type ISwitchOption = {
+export interface ISwitchOption extends ISelectOption {
   checked?: boolean;
-} & ISelectOption;
+}
 
 const fields: ISelectOption[] = [
   {
